@@ -237,9 +237,12 @@ public class FormSiswa extends javax.swing.JFrame {
             koneksi();
             statSiswa = con.createStatement();
             String SQL = "DELETE FROM siswa WHERE nis = '"+jTextField1.getText()+"'";
+            statSiswa.executeUpdate(SQL);
+            display();
             statSiswa.close();
             con.close();
             JOptionPane.showMessageDialog(null, "Delete succeed");
+            
         } catch (Exception exc) {
             System.err.println(exc.getMessage());
         }
